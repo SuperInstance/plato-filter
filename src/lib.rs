@@ -316,7 +316,7 @@ pub fn butterworth_lowpass(data: &[f64], cutoff: f64, sample_rate: f64, order: u
             // Second-order section
             let angle = std::f64::consts::PI * (2.0 * k as f64 - 1.0) / (2.0 * order as f64);
             let sigma = -angle.cos(); // real part of analog pole
-            let omega = angle.sin();  // imaginary part
+            let _omega = angle.sin();  // imaginary part (unused for real-valued poles)
 
             let fcw = warp(fc);
             let k_val = fcw * fcw;
